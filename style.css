@@ -27,6 +27,7 @@ button {
   font-size: 20px;
   font-weight: bold;
   color: #00ff00;
+  background: none;
   border: none;
   padding: 5px 10px;
   margin: 0;
@@ -54,9 +55,11 @@ button {
 }
 .panel {
   display: none;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 10px;
   padding: 10px 20px;
   border: 1px solid #00ff00;
-  margin-top: 10px;
 }
 .panel.active {
   display: block;
@@ -66,11 +69,14 @@ button {
   border: 1px solid #00ff00;
   padding: 0px 7px;
 }
+.vault_boy {
+  height: 100%;
+  width: 100%;
+}
 .crt-overlay {
   padding: 10px 20px 20px 20px;
   height: 100%;
   width: 92%;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABmgAAAAHAQMAAAA2xVAuAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAZQTFRFAg0FAAAAJ+EsRwAAAAJ0Uk5T/wDltzBKAAAAIklEQVR4nGNkGE6AcaAdQFUw6pvBCxj/D7QLqAlGfTN4AQDolQMFDhMUxwAAAABJRU5ErkJggg==")
-    repeat;
+  background: url("assets/crt_line.png") repeat;
   background-color: rgba(0, 255, 0, 0.031);
 }

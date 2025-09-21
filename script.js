@@ -1,5 +1,6 @@
-function playSound() {
+function playSound(sound_file) {
   const sound = document.getElementById("clickSound");
+  sound.src = `assets/${sound_file}.mp3`;
   sound.currentTime = 0;
   sound.play();
 }
@@ -15,7 +16,13 @@ function showPanel(id) {
   }
   document.getElementById(id).className = "panel active";
   document.getElementById("button-" + id).className = "clicked";
-  playSound();
+  var file =
+    id === "map"
+      ? "geiger_counter"
+      : id === "radio"
+      ? "world_on_fire"
+      : "vats_lock";
+  playSound(file);
 }
 
 function flickerWrapper(wrapperId) {
