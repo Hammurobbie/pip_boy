@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pip-Boy</title>
+    <meta
+      name="viewport"
+      content="width=480, height=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <style>
+      * {
+        text-shadow: 1px 1px 7px #00ff00;
+        text-transform: uppercase;
+        font-family: "Courier New", Courier, monospace;
+      }
+      html,
+      body {
+        overscroll-behavior: none;
+        overflow: hidden;
+      }
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #080e01;
+        color: #00ff00;
+        font-family: monospace;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      h2 {
+        margin: 0;
+      }
+      button {
+        position: relative;
+        font-size: 20px;
+        font-weight: bold;
+        color: #00ff00;
+        border: none;
+        padding: 5px 10px;
+        margin: 0;
+        margin-top: 0;
+        font-family: monospace;
+        cursor: pointer;
+      }
+      .clicked {
+        border-left: 2px solid #00ff00;
+        border-right: 2px solid #00ff00;
+      }
+      .clicked:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: #080e01;
+        margin-top: 5px;
+        left: 0;
+        z-index: 1;
+      }
+      .buttons {
+        border-bottom: 2px solid #00ff00;
+      }
+      .panel {
+        display: none;
+        padding: 10px 20px;
+        border: 1px solid #00ff00;
+        margin-top: 10px;
+      }
+      .panel.active {
+        display: block;
+      }
+      .rt {
+        font-size: 20px;
+        border: 1px solid #00ff00;
+        padding: 0px 7px;
+      }
+      .crt-overlay {
+        padding: 10px 20px 20px 20px;
+        height: 100%;
+        width: 92%;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABmgAAAAHAQMAAAA2xVAuAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAZQTFRFAg0FAAAAJ+EsRwAAAAJ0Uk5T/wDltzBKAAAAIklEQVR4nGNkGE6AcaAdQFUw6pvBCxj/D7QLqAlGfTN4AQDolQMFDhMUxwAAAABJRU5ErkJggg==")
+          repeat;
+        background-color: rgba(0, 255, 0, 0.031);
+      }
+    </style>
+  </head>
+  <div class="crt-overlay">
+    <body id="body">
+      <audio id="clickSound" preload="auto" src=""></audio>
+
+      <div class="buttons">
+        <button
+          id="button-status"
+          class="clicked"
+          onclick="showPanel('status')"
+        >
+          Stat
+        </button>
+        <button id="button-inventory" onclick="showPanel('inventory')">
+          Inv
+        </button>
+        <button id="button-data" onclick="showPanel('data')">Data</button>
+        <button id="button-map" onclick="showPanel('map')">Map</button>
+        <button id="button-radio" onclick="showPanel('radio')">Radio</button>
+        <span class="rt">RT</span>
+      </div>
+
+      <div id="status" class="panel active">
+        <h2>Status</h2>
+        <p>HP: 100%</p>
+        <p>RAD: 0%</p>
+        <p>Level: 7</p>
+      </div>
+
+      <div id="inventory" class="panel">
+        <h2>Inventory</h2>
+        <ul>
+          <li>10mm Pistol</li>
+          <li>Stimpak x5</li>
+          <li>RadAway x2</li>
+          <li>Laser Rifle</li>
+        </ul>
+      </div>
+
+      <div id="data" class="panel">
+        <h2>Data</h2>
+        <p>[Barren Wastes]</p>
+        <p>Location: Vault 101</p>
+      </div>
+
+      <div id="map" class="panel">
+        <h2>Map</h2>
+        <p>[Barren Wastes]</p>
+        <p>Location: Vault 101</p>
+      </div>
+
+      <div id="radio" class="panel">
+        <h2>Radio</h2>
+        <p>[Radio Mohave]</p>
+        <p>Set The World on Fire</p>
+      </div>
+
+      <script>
+        function playSound() {
+          const sound = document.getElementById("clickSound");
+          sound.currentTime = 0;
+          sound.play();
+        }
+
+        function showPanel(id) {
+          var panels = document.getElementsByClassName("panel");
+          var buttons = document.getElementsByTagName("button");
+          for (var i = 0; i < panels.length; i++) {
+            panels[i].className = "panel";
+          }
+          for (var i = 0; i < buttons.length; i++) {
+            buttons[i].className = "";
+          }
+          document.getElementById(id).className = "panel active";
+          document.getElementById("button-" + id).className = "clicked";
+          playSound();
+        }
+
+        function flickerWrapper(wrapperId) {
+          var wrapper = document.getElementById(wrapperId);
+          setInterval(function () {
+            var opacity = 0.6 + Math.random() * 0.4;
+            wrapper.style.opacity = opacity;
+          }, 250);
+        }
+
+        document.addEventListener(
+          "touchmove",
+          function (e) {
+            e.preventDefault();
+          },
+          { passive: false }
+        );
+
+        window.onload = function () {
+          flickerWrapper("body");
+        };
+      </script>
+    </body>
+  </div>
+</html>
