@@ -20,7 +20,7 @@ body {
   overflow: hidden;
 }
 h2 {
-  margin: 0;
+  margin: 40px 0 0 0;
 }
 button {
   position: relative;
@@ -55,14 +55,19 @@ button {
 }
 .panel {
   display: none;
-  width: 400px;
-  margin: 0 auto;
-  margin-top: 10px;
   padding: 10px 20px;
   border: 1px solid #00ff00;
+  text-align: center;
 }
 .panel.active {
   display: block;
+}
+.panel ul {
+  display: inline-block;
+  text-align: left;
+  padding-left: 0;
+  margin: 10px auto;
+  list-style-position: inside;
 }
 .rt {
   font-size: 20px;
@@ -70,8 +75,15 @@ button {
   padding: 0px 7px;
 }
 .vault_boy {
-  height: 100%;
-  width: 100%;
+  display: inline-block;
+  margin: 5px 0;
+  height: 200px;
+  width: 200px;
+}
+.medic {
+  display: inline-block;
+  height: 105px;
+  width: auto;
 }
 .crt-overlay {
   padding: 10px 20px 20px 20px;
@@ -79,4 +91,8 @@ button {
   width: 92%;
   background: url("assets/crt_line.png") repeat;
   background-color: rgba(0, 255, 0, 0.031);
+}
+.hidden {
+  width: 0;
+  height: 0;
 }

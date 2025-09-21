@@ -16,7 +16,36 @@
   </head>
   <div class="crt-overlay">
     <body id="body">
-      <audio id="clickSound" preload="auto" src=""></audio>
+      <audio
+        id="sound-vats_lock"
+        preload="auto"
+        src="assets/vats_lock.mp3"
+        class="hidden"
+      ></audio>
+      <audio
+        id="sound-vats_lock_2"
+        src="assets/vats_lock.mp3"
+        preload="auto"
+        class="hidden"
+      ></audio>
+      <audio
+        id="sound-vats_lock_3"
+        src="assets/vats_lock.mp3"
+        preload="auto"
+        class="hidden"
+      ></audio>
+      <audio
+        id="sound-geiger_counter"
+        preload="auto"
+        src="assets/geiger_counter.mp3"
+        class="hidden"
+      ></audio>
+      <audio
+        id="sound-world_on_fire"
+        preload="auto"
+        src="assets/world_on_fire.mp3"
+        class="hidden"
+      ></audio>
 
       <div class="buttons">
         <button
@@ -37,10 +66,6 @@
 
       <div id="status" class="panel active">
         <img class="vault_boy" src="assets/vault_boy.png" />
-        <!-- <h2>Status</h2>
-        <p>HP: 100%</p>
-        <p>RAD: 0%</p>
-        <p>Level: 7</p> -->
       </div>
 
       <div id="inventory" class="panel">
@@ -49,26 +74,26 @@
           <li>10mm Pistol</li>
           <li>Stimpak x5</li>
           <li>RadAway x2</li>
-          <li>Laser Rifle</li>
+          <li style="margin-bottom: 50px">Mini Nuke</li>
         </ul>
       </div>
 
       <div id="data" class="panel">
-        <h2>Data</h2>
-        <p>[Barren Wastes]</p>
-        <p>Location: Vault 101</p>
+        <h2 style="margin-bottom: 0px">Data</h2>
+        <p style="margin-top: 2px">Medic</p>
+        <img class="medic" src="assets/medic.png" />
       </div>
 
       <div id="map" class="panel">
         <h2>Map</h2>
         <p>[Barren Wastes]</p>
-        <p>Location: Vault 101</p>
+        <p style="margin-bottom: 76px">Location: Vault 101</p>
       </div>
 
       <div id="radio" class="panel">
         <h2>Radio</h2>
         <p>[Radio Mohave]</p>
-        <p>Set The World on Fire</p>
+        <p style="margin-bottom: 76px">Set The World on Fire</p>
       </div>
 
       <script src="script.js"></script>
