@@ -43,7 +43,7 @@ button {
   content: "";
   display: block;
   position: absolute;
-  height: 3px;
+  height: 4px;
   width: 100%;
   background-color: #080e01;
   margin-top: 5px;
@@ -56,7 +56,7 @@ button {
 .panel {
   display: none;
   padding: 10px 20px;
-  border: 1px solid #00ff00;
+  border: 2px solid #00ff00;
   text-align: center;
 }
 .panel.active {
@@ -71,7 +71,9 @@ button {
 }
 .rt {
   font-size: 20px;
-  border: 1px solid #00ff00;
+  font-weight: bold;
+  border: 2px solid #00ff00;
+  border-bottom: none;
   padding: 0px 7px;
 }
 .vault_boy {

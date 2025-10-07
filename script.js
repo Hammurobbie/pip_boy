@@ -38,7 +38,7 @@ function showPanel(id) {
 function flickerWrapper(wrapperId) {
   var wrapper = document.getElementById(wrapperId);
   setInterval(function () {
-    var opacity = 0.6 + Math.random() * 0.4;
+    var opacity = 0.5 + Math.random() * 0.5;
     wrapper.style.opacity = opacity;
   }, 250);
 }
