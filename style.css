@@ -69,28 +69,15 @@ button {
   margin: 10px auto;
   list-style-position: inside;
 }
-<<<<<<< HEAD
-.rt {
-  font-size: 20px;
-  font-weight: bold;
-  border: 2px solid #00ff00;
-  border-bottom: none;
-  padding: 0px 7px;
-=======
 button img {
   width: 22px;
   vertical-align: top;
->>>>>>> f27c5c3 (added clock)
 }
 .vault_boy {
   display: inline-block;
   margin: 5px 0;
   height: 200px;
-<<<<<<< HEAD
-  width: 200px;
-=======
   width: 300px;
->>>>>>> f27c5c3 (added clock)
 }
 .medic {
   display: inline-block;
@@ -108,12 +95,9 @@ button img {
   width: 0;
   height: 0;
 }
-<<<<<<< HEAD
-=======
 #clock-time {
   font-size: 150px;
   padding: 2px 0;
   font-family: Futura;
   font-weight: bold;
 }
->>>>>>> f27c5c3 (added clock)
